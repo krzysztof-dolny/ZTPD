@@ -1,8 +1,3 @@
--- RESTERT
-DROP TABLE wlasciciele;
-DROP TABLE samochody;
-DROP TYPE samochod;
-
 -- ZADANIE 1
 
 CREATE TYPE samochod AS OBJECT(
