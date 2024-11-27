@@ -16,8 +16,8 @@ WHERE SDO_RELATE(
         (SELECT C.GEOM 
          FROM MAJOR_CITIES C 
          WHERE C.CITY_NAME = 'Koszalin'),
-        10, -- Promień bufora w kilometrach
-        1, -- Tolerancja
+        10,
+        1,
         'unit=km'
     ),
     'MASK=ANYINTERACT'
@@ -25,9 +25,7 @@ WHERE SDO_RELATE(
 
 -- C
 
-SELECT 
-    SDO_GEOM.SDO_LENGTH(GEOM, 0.05) AS DISTANCE,
-    SDO_UTIL.GETNUMVERTICES(GEOM) AS ST_NUMPOINTS
+SELECT SDO_GEOM.SDO_LENGTH(GEOM, 0.05) AS DISTANCE, SDO_UTIL.GETNUMVERTICES(GEOM) AS ST_NUMPOINTS
 FROM A6_LRS;
 
 -- D 
